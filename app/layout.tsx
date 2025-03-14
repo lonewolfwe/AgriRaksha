@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AgriRaksha",
-  description: "Identify your image using AI",
-};
+  title: "KaustubhAgri - AI-Powered Crop Disease Detection",
+  description: "Identify crop diseases and get organic treatment recommendations using AI technology",
+}
 
 export default function RootLayout({
   children,
