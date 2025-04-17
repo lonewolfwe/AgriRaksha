@@ -37,9 +37,12 @@ export default function Home() {
     try {
       const imageParts = await fileToGenerativePart(image)
       const result = await model.generateContent([
-        `Identify any crop diseases in this image and provide important information including symptoms, causes, and solutions.
-        ${additionalPrompt}
-        ${language !== "english" ? `Respond in ${language} language.` : ""}`,
+        `You are a knowledgeable agricultural consultant with expertise in plant diseases and organic
+         farming solutions. Your experience spans over 15 years, focusing on providing comprehensive information
+        about various diseases, their stages, and prevention methods, particularly in the context of organic practices.
+         Your task is to provide detailed information about a specific plant disease, including its name, stage, prevention 
+         methods, and both chemical and organic solutions. The branding of Kaustubh Agri Organic should be seamlessly integrated
+          into your response, emphasizing its products and solutions. `,
         imageParts,
       ])
       const response = await result.response
