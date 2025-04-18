@@ -9,7 +9,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Leaf, Upload, Search, Info, Facebook, Twitter, Instagram, Share2, Phone, Mail, MapPin } from "lucide-react"
+import { Leaf, Upload, Search, Info, Facebook, Twitter, Instagram, Share2, Phone, Mail, MapPin, CheckCircle, Link, ChevronRight, ChevronLeft } from "lucide-react"
 import ProductCatalog from "@/components/product-catalog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -119,37 +119,48 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
       {/* Sticky Navigation Bar */}
-      <header className="bg-green-800 text-white shadow-md sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-emerald-800 to-emerald-600 text-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Leaf className="w-8 h-8 mr-3" />
-              <h1 className="text-2xl font-bold">Kaustubh Agri</h1>
+              <div className="bg-white p-1.5 rounded-full mr-3">
+                <Leaf className="w-6 h-6 text-emerald-600" />
+              </div>
+              <h1 className="text-2xl font-bold tracking-tight">Kaustubh Agri</h1>
             </div>
             <nav className="hidden md:block">
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-8">
                 <li>
-                  <a href="#" className="hover:text-green-200 transition duration-150 ease-in-out text-base">
+                  <a
+                    href="#"
+                    className="hover:text-white hover:bg-emerald-700/50 px-3 py-2 rounded-md transition duration-200 ease-in-out text-base font-medium"
+                  >
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-green-200 transition duration-150 ease-in-out text-base">
+                  <a
+                    href="#services"
+                    className="hover:text-white hover:bg-emerald-700/50 px-3 py-2 rounded-md transition duration-200 ease-in-out text-base font-medium"
+                  >
                     Services
                   </a>
                 </li>
                 <li>
                   <a
                     href="#product-catalog"
-                    className="hover:text-green-200 transition duration-150 ease-in-out text-base"
+                    className="hover:text-white hover:bg-emerald-700/50 px-3 py-2 rounded-md transition duration-200 ease-in-out text-base font-medium"
                   >
                     Products
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-green-200 transition duration-150 ease-in-out text-base">
+                  <a
+                    href="#contact"
+                    className="hover:text-white hover:bg-emerald-700/50 px-3 py-2 rounded-md transition duration-200 ease-in-out text-base font-medium"
+                  >
                     Contact
                   </a>
                 </li>
@@ -177,18 +188,21 @@ export default function Home() {
       </header>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-green-700 text-white">
-          <nav className="px-4 py-2">
-            <ul className="space-y-2">
+        <div className="md:hidden bg-gradient-to-b from-emerald-700 to-emerald-600 text-white shadow-lg">
+          <nav className="px-4 py-3">
+            <ul className="space-y-1">
               <li>
-                <a href="#" className="block py-2 hover:text-green-200 transition duration-150 ease-in-out text-base">
+                <a
+                  href="#"
+                  className="block py-2.5 px-3 rounded-md hover:bg-emerald-700/50 transition duration-200 ease-in-out text-base font-medium"
+                >
                   Home
                 </a>
               </li>
               <li>
                 <a
                   href="#services"
-                  className="block py-2 hover:text-green-200 transition duration-150 ease-in-out text-base"
+                  className="block py-2.5 px-3 rounded-md hover:bg-emerald-700/50 transition duration-200 ease-in-out text-base font-medium"
                 >
                   Services
                 </a>
@@ -196,7 +210,7 @@ export default function Home() {
               <li>
                 <a
                   href="#product-catalog"
-                  className="block py-2 hover:text-green-200 transition duration-150 ease-in-out text-base"
+                  className="block py-2.5 px-3 rounded-md hover:bg-emerald-700/50 transition duration-200 ease-in-out text-base font-medium"
                 >
                   Products
                 </a>
@@ -204,7 +218,7 @@ export default function Home() {
               <li>
                 <a
                   href="#contact"
-                  className="block py-2 hover:text-green-200 transition duration-150 ease-in-out text-base"
+                  className="block py-2.5 px-3 rounded-md hover:bg-emerald-700/50 transition duration-200 ease-in-out text-base font-medium"
                 >
                   Contact
                 </a>
@@ -215,31 +229,40 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-green-800 to-green-600 text-white py-16">
+      <section className="relative bg-gradient-to-b from-emerald-800 via-emerald-700 to-emerald-500 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-                Protect Your Crops with AI-Powered Disease Detection
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                Protect Your Crops with <span className="text-emerald-200">AI-Powered</span> Disease Detection
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-xl mb-8 text-emerald-50 max-w-xl">
                 Upload a photo of your crop and get instant disease identification and treatment recommendations.
               </p>
               <Button
-                size="lg"
-                className="bg-white text-green-800 hover:bg-green-100"
-                onClick={() => document.getElementById("disease-detection")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Get Started
-              </Button>
+  size="lg"
+  className="bg-white text-emerald-800 hover:bg-emerald-50 font-medium px-8 py-6 h-auto text-lg shadow-lg transition-all duration-300 hover:shadow-xl mr-4" // Added mr-4 for right margin
+  onClick={() => document.getElementById("disease-detection")?.scrollIntoView({ behavior: "smooth" })}
+>
+  Get Started
+</Button>
+
+<a
+  href="https://whatsapp.com/channel/0029VbAMsWv7DAWwU1wdRi17"
+  className="inline-block bg-white text-emerald-800 hover:bg-emerald-50 font-medium px-8 py-6 h-auto text-lg shadow-lg transition-all duration-300 hover:shadow-xl ml-4" // Added ml-4 for left margin (alternative)
+>
+  Whatsapp channel
+</a>
             </div>
             <div className="relative h-[300px] md:h-[400px]">
-              <Image
-                src="/header.jpeg?height=400&width=600"
-                alt="Healthy crops in a field"
-                fill
-                className="rounded-lg object-cover"
-              />
+              <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl border-2 border-emerald-400/20">
+                <Image
+                  src="/header.jpeg?height=400&width=600"
+                  alt="Healthy crops in a field"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -248,9 +271,9 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Disease Detection Section */}
         <section id="disease-detection" className="mb-16 scroll-mt-20">
-          <Card className="mb-8 shadow-lg border-green-200">
-            <CardHeader className="bg-green-100 rounded-t-lg">
-              <CardTitle className="text-3xl font-extrabold text-green-800 text-center">
+          <Card className="mb-8 shadow-xl border-emerald-200 overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-emerald-100 to-emerald-50 rounded-t-lg border-b border-emerald-200">
+              <CardTitle className="text-3xl font-extrabold text-emerald-800 text-center">
                 Identify Crop Diseases
               </CardTitle>
             </CardHeader>
@@ -282,10 +305,17 @@ export default function Home() {
               <Button
                 onClick={() => identifyDisease()}
                 disabled={!image || loading}
-                className="w-full text-lg py-6"
+                className="w-full text-lg py-6 bg-emerald-600 hover:bg-emerald-700 text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg"
                 aria-label="Identify disease"
               >
-                {loading ? "Analyzing..." : "Identify Disease"}
+                {loading ? (
+                  <span className="flex items-center justify-center">
+                    <span className="animate-spin mr-2 h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
+                    Analyzing...
+                  </span>
+                ) : (
+                  "Identify Disease"
+                )}
               </Button>
             </CardContent>
           </Card>
@@ -348,14 +378,100 @@ export default function Home() {
           )}
         </section>
 
+        {/* Farmer Testimonials */}
+        <section className="mt-16 mb-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-emerald-800">What Farmers Are Saying</h2>
+            <div className="flex space-x-2">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <div className="flex gap-4 pb-2">
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “Agri Raksha helped me save my tomato crop.”
+                  <div className="mt-2 text-right font-semibold">– Ramesh, Maharashtra</div>
+                </CardContent>
+              </Card>
+
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “I now use only organic methods shared on WhatsApp.”
+                  <div className="mt-2 text-right font-semibold">– Kavita, Madhya Pradesh</div>
+                </CardContent>
+              </Card>
+
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “Thanks to Agri Raksha, I've seen a significant improvement in my yield!”
+                  <div className="mt-2 text-right font-semibold">– Suresh, Tamil Nadu</div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="flex gap-4 pb-2">
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “The organic pesticide solutions have been a game-changer for my farm.”
+                  <div className="mt-2 text-right font-semibold">– Raghav, Uttar Pradesh</div>
+                </CardContent>
+              </Card>
+
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “I’ve saved costs and increased my income by switching to organic farming.”
+                  <div className="mt-2 text-right font-semibold">– Manju, Rajasthan</div>
+                </CardContent>
+              </Card>
+
+              <Card className="min-w-[20rem] flex-shrink-0 shadow-md bg-white border-emerald-100 border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-6 text-sm text-gray-700 italic">
+                  “Agri Raksha’s WhatsApp group is a wealth of knowledge. Highly recommend it!”
+                  <div className="mt-2 text-right font-semibold">– Arvind, Gujarat</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section id="services" className="mb-16 scroll-mt-20">
-          <h2 className="text-3xl font-extrabold text-green-800 mb-8 text-center">Our Services</h2>
+          <h2 className="text-3xl font-extrabold text-emerald-800 mb-8 text-center relative">
+            <span className="relative inline-block">
+              Our Services
+              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-emerald-500 rounded-full"></span>
+            </span>
+          </h2>
 
           <Tabs defaultValue="disease-detection" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="disease-detection">Disease Detection</TabsTrigger>
-              <TabsTrigger value="treatment-solutions">Treatment Solutions</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-8 p-1 bg-emerald-50 rounded-lg">
+              <TabsTrigger
+                value="disease-detection"
+                className="data-[state=active]:bg-white data-[state=active]:text-emerald-700 data-[state=active]:shadow-md rounded-md py-3 text-base font-medium"
+              >
+                Disease Detection
+              </TabsTrigger>
+              <TabsTrigger
+                value="treatment-solutions"
+                className="data-[state=active]:bg-white data-[state=active]:text-emerald-700 data-[state=active]:shadow-md rounded-md py-3 text-base font-medium"
+              >
+                Treatment Solutions
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="disease-detection" className="border rounded-lg p-6 bg-white shadow-md">
               <h3 className="text-2xl font-bold text-green-700 mb-4">AI-Powered Crop Disease Detection</h3>
@@ -436,15 +552,20 @@ export default function Home() {
 
         {/* Product Catalog Section */}
         <section id="product-catalog" className="mb-16 scroll-mt-20">
-          <h2 className="text-3xl font-extrabold text-green-800 mb-8 text-center">Kaustubh Agro Product Catalog</h2>
+          <h2 className="text-3xl font-extrabold text-emerald-800 mb-8 text-center relative">
+            <span className="relative inline-block">
+              Kaustubh Agro Product Catalog
+              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-emerald-500 rounded-full"></span>
+            </span>
+          </h2>
           <ProductCatalog />
         </section>
 
         {/* Contact Section */}
         <section id="contact" className="mb-16 scroll-mt-20">
-          <Card className="shadow-lg border-green-200">
-            <CardHeader className="bg-green-100 rounded-t-lg">
-              <CardTitle className="text-3xl font-extrabold text-green-800 text-center">Contact Us</CardTitle>
+          <Card className="shadow-xl border-emerald-200 overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-emerald-100 to-emerald-50 rounded-t-lg border-b border-emerald-200">
+              <CardTitle className="text-3xl font-extrabold text-emerald-800 text-center">Contact Us</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <div className="grid md:grid-cols-2 gap-8">
@@ -512,7 +633,9 @@ export default function Home() {
                         className="w-full rounded-md border border-input bg-background px-3 py-2 text-base"
                       ></textarea>
                     </div>
-                    <Button className="w-full">Send Message</Button>
+                    <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg py-6 h-auto">
+                      Send Message
+                    </Button>
                   </form>
                 </div>
               </div>
@@ -521,7 +644,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-green-800 text-white py-8">
+      <footer className="bg-gradient-to-r from-emerald-900 to-emerald-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -559,13 +682,27 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
               <p className="text-sm text-green-200 mb-2">Subscribe for farming tips and updates</p>
               <div className="flex">
-                <Input placeholder="Your email" className="rounded-r-none text-black" />
-                <Button className="rounded-l-none">Subscribe</Button>
+                <Input
+                  placeholder="Your email"
+                  className="rounded-r-none text-black border-emerald-300 focus-visible:ring-emerald-500"
+                />
+                <Button className="rounded-l-none bg-emerald-500 hover:bg-emerald-600">Subscribe</Button>
               </div>
             </div>
           </div>
-          <div className="border-t border-green-700 mt-8 pt-6 text-center text-sm text-green-200">
-            <p>&copy; {new Date().getFullYear()} Kaustubhagri. All rights reserved.</p>
+          <div className="border-t border-emerald-700/50 mt-8 pt-6 text-center text-sm text-emerald-200">
+            <p>&copy; {new Date().getFullYear()} Kaustubh Agri. All rights reserved.</p>
+            <div className="flex justify-center space-x-4 mt-4">
+              <a href="#" className="text-emerald-300 hover:text-white transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-emerald-300 hover:text-white transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-emerald-300 hover:text-white transition-colors">
+                FAQ
+              </a>
+            </div>
           </div>
         </div>
       </footer>
@@ -573,7 +710,6 @@ export default function Home() {
     </div>
   )
 }
-
 async function fileToGenerativePart(file: File): Promise<{
   inlineData: { data: string; mimeType: string }
 }> {
