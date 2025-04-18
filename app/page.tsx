@@ -225,13 +225,22 @@ export default function Home() {
               <p className="text-xl mb-8">
                 Upload a photo of your crop and get instant disease identification and treatment recommendations.
               </p>
-              <Button
-                size="lg"
-                className="bg-white text-green-800 hover:bg-green-100"
-                onClick={() => document.getElementById("disease-detection")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Get Started
-              </Button>
+              <div className="flex space-x-4"> {/* Added a flex container with space-x-4 */}
+  <Button
+    size="lg"
+    className="bg-white text-emerald-800 hover:bg-emerald-50 font-medium px-8 py-6 h-auto text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+    onClick={() => document.getElementById("disease-detection")?.scrollIntoView({ behavior: "smooth" })}
+  >
+    Get Started
+  </Button>
+
+  <a
+    href="https://whatsapp.com/channel/0029VbAMsWv7DAWwU1wdRi17"
+    className="inline-block bg-white text-emerald-800 hover:bg-emerald-50 font-medium px-8 py-6 h-auto text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+  >
+    Whatsapp channel
+  </a>
+</div>
             </div>
             <div className="relative h-[300px] md:h-[400px]">
               <Image
@@ -348,28 +357,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* Join WhatsApp Group Section */}
-      <section className="mt-12 bg-green-100 rounded-xl p-8 grid gap-4">
-        <div className="flex items-center gap-4">
-          <Image src="/vercel.svg" alt="WhatsApp Icon" width={48} height={48} />
-          <h2 className="text-2xl font-semibold">Get Daily Organic Tips – Join Now</h2>
-        </div>
-        <ul className="grid gap-2 text-sm">
-          <li className="flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            Tips in local language
-          </li>
-          <li className="flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            Trusted by 10,000+ farmers
-          </li>
-          <li className="flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            Free forever
-          </li>
-        </ul>
-        <Button>Join WhatsApp Group</Button>
-      </section>
 
 
         {/* Services Section */}
